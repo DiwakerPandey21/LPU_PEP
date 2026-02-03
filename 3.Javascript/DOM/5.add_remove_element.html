@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and remove element</title>
+</head>
+
+<body style="background-color: lightskyblue;">
+
+    <!-- 1. we want to add list of languages we know so far: -->
+    <ul class="languages">
+        <li>Javascript</li>
+    </ul>
+
+    <script>
+
+        // const a = shiva
+
+        // A. CREATING LIST:
+        // 1.1:
+        // function addLang(languageName) {
+        //     const li = document.createElement('li');
+        //     li.innerHTML = `${languageName}`;
+        //     document.querySelector('.languages')
+        //     addLang("python")
+        //     addLang("Typescript")
+        // }
+
+        // 1.2:
+        function addLang(languageName) {
+            const li = document.createElement('li');
+
+            // 2.1
+            // const addText = document.createTextNode(languageName);
+            // li.appendChild(addText);
+
+            //2.2
+            li.appendChild(document.createTextNode(languageName))
+
+            const d = document.querySelector('.languages').appendChild(li)
+            console.log(d)
+        }
+
+        addLang('typescript');
+        addLang('Java')
+
+        // B. EDIT / REPLACE/ UPDATE LIST: we are trying to update 2nd element of the list
+        //3.1
+        // const lang2nd = document.querySelector("li:nth-child(2)")
+        // const newLi = document.createElement('li');
+        // newLi.textContent = "C";
+        // lang2nd.replaceWith(newLi);
+
+        // 3.2: edit 1st list element:
+        const lang1st = document.querySelector('li:first-child');
+        const newLi = document.createElement('li')
+        newLi.textContent = "Java";
+        lang1st.replaceWith(newLi)
+
+        // 4. remove element from DOM:
+        const deleteJava = document.querySelector("li:last-child");
+        deleteJava.remove();
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- You have to create a list of your favourite food: using
+ dom element create, you have to edit 1st list of food and replace it with any other food you like, ones ddone with it you have to remove the last food item from the list. At last we are left with 2 favourite food list-->
