@@ -24,4 +24,4 @@ for (let i = 1; i < 10000; i++) {
   console.log("Loop is running");
 }
 console.log("Execution ends here");
-// setTimeout: it is func which we use to execute a function after specific delay:
+
