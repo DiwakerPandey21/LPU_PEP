@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character count</title>
+</head>
+
+<body>
+    <h1>Enter your Tweet:</h1>
+    <textarea name="" id="text" placeholder="What's happening in the world" rows="4" cols="40"></textarea>
+    <p id="count">280 Character's remaning</p>
+
+    <script>
+        const text = document.getElementById('text');
+        const count = document.getElementById('count');
+
+        const maxLength = 280;
+
+        text.addEventListener('input', () => {
+            let currentLength = text.value.length;
+            let remainingCharacters = maxLength - currentLength;
+            if (currentLength > maxLength) {
+                text.value = text.value.subString(0, maxLength)
+                remainingCharacters = 0;
+            }
+            count.innerText = remainingCharacters + ": character remaining";
+
+            // when limit is near change the color:
+            if (remainingCharacters <= 20) {
+                count.style.color = "red"
+            } else {
+                count.style.color = "black"
+            }
+        }
+        )
+
+        let arr = [1, 2, 3, 4, 5, 6];
+        arr.filter(n => n % 2 === 0).map(n => n * 10);
+        console.log(arr)
+
+
+    </script>
+</body>
+
+</html>
