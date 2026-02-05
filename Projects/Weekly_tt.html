@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekday Time Table</title>
+  <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+<h1 class="h1">Weekly Time Table</h1>
+<nav class="navbar">
+  <ul class="weekdays">
+    <li data-day="monday">Monday</li>
+    <li data-day="tuesday">Tuesday</li>
+    <li data-day="wednesday">Wednesday</li>
+    <li data-day="thursday">Thursday</li>
+    <li data-day="friday">Friday</li>
+  </ul>
+</nav>
+
+<div class="content">
+  <div class="info" id="monday">
+    <h3>Monday</h3>
+    <p>Attendance</p>
+    <p>Class</p>
+    <p>Timetable</p>
+    <p>Notes</p>
+  </div>
+
+  <div class="info" id="tuesday">
+    <h3>Tuesday</h3>
+    <p>Attendance</p>
+    <p>Lab</p>
+    <p>Assignments</p>
+  </div>
+
+  <div class="info" id="wednesday">
+    <h3>Wednesday</h3>
+    <p>Attendance</p>
+    <p>Class</p>
+    <p>Test</p>
+  </div>
+
+  <div class="info" id="thursday">
+    <h3>Thursday</h3>
+    <p>Attendance</p>
+    <p>Presentation</p>
+  </div>
+
+  <div class="info" id="friday">
+    <h3>Friday</h3>
+    <p>Attendance</p>
+    <p>Revision</p>
+    <p>Notes</p>
+  </div>
+</div>
+<script>
+  const days = document.querySelectorAll(".weekdays li");
+  const boxes = document.querySelectorAll(".info");
+
+  // hide all boxes
+  function hideAll() {
+    boxes.forEach(box => box.style.display = "none");
+  }
+
+  days.forEach(day => {
+    day.addEventListener("mouseenter", () => {
+      hideAll();
+      document.getElementById(day.dataset.day).style.display = "block";
+    });
+
+    day.addEventListener("mouseleave", () => {
+      hideAll();   // 👈 hides when cursor leaves
+    });
+  });
+</script>
+</body>
+</html>
