@@ -1,0 +1,16 @@
+<ul id="list">
+  <li>Apple</li>
+  <li>Mango</li>
+  <li>Banana</li>
+</ul>
+
+<script>
+  let items = document.querySelectorAll("#list li");
+
+  items.forEach(function (item) {
+    item.addEventListener("click", function () {
+      items.forEach(li => li.style.backgroundColor = "white");
+      item.style.backgroundColor = "yellow";
+    });
+  });
+</script>

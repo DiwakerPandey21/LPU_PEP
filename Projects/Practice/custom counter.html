@@ -1,0 +1,19 @@
+<!-- on single click increment count, on double click decrement count -->
+<h2 id="count">0</h2>
+<button id="counterBtn">Click / Double Click</button>
+
+<script>
+  let count = 0;
+  let display = document.getElementById("count");
+  let btn = document.getElementById("counterBtn");
+
+  btn.addEventListener("click", function () {
+    count++;
+    display.innerText = count;
+  });
+
+  btn.addEventListener("dblclick", function () {
+    count--;
+    display.innerText = count;
+  });
+</script>

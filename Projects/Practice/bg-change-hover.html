@@ -1,0 +1,13 @@
+<div id="box" style="width:200px;height:200px;background:gray;"></div>
+
+<script>
+  let box = document.getElementById("box");
+
+  box.addEventListener("mouseenter", function () {
+    box.style.backgroundColor = "green";
+  });
+
+  box.addEventListener("mouseleave", function () {
+    box.style.backgroundColor = "gray";
+  });
+</script>

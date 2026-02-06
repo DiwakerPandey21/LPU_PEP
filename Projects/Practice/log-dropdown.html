@@ -1,0 +1,13 @@
+<select id="dropdown">
+  <option value="JS">JavaScript</option>
+  <option value="HTML">HTML</option>
+  <option value="CSS">CSS</option>
+</select>
+
+<script>
+  let dropdown = document.getElementById("dropdown");
+
+  dropdown.addEventListener("change", function () {
+    console.log("Selected:", dropdown.value);
+  });
+</script>

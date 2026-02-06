@@ -1,0 +1,11 @@
+<input type="checkbox" id="terms"> Accept Terms
+<button id="submitBtn" disabled>Submit</button>
+
+<script>
+  let terms = document.getElementById("terms");
+  let submitBtn = document.getElementById("submitBtn");
+
+  terms.addEventListener("change", function () {
+    submitBtn.disabled = !terms.checked;
+  });
+</script>

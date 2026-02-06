@@ -1,0 +1,16 @@
+<form id="myForm">
+  <input type="text" placeholder="Enter name">
+  <button type="submit">Submit</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+  let form = document.getElementById("myForm");
+  let msg = document.getElementById("msg");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    msg.innerText = "Form submission prevented 🚫";
+  });
+</script>
