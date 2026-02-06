@@ -51,34 +51,78 @@
         // }
         // getData()
 
-        // 1.4: fetch + (dom)render data 
-        let url = "https://swapi.info/api/people/1"
+        // // 1.4: fetch + (dom)render data 
+        // let url = "https://swapi.info/api/people/1"
 
 
-        let container = document.querySelector(".container");
+        // let container = document.querySelector(".container");
 
 
-        async function getStarWarsData() {
+        // async function getStarWarsData() {
+        //     try {
+        //         let response = await fetch(url);
+        //         let data = await response.json();
+        //         showData(data);
+        //     } catch (err) {
+        //         console.log(err)
+        //     }
+        // }
+        // getStarWarsData();
+
+        // function showData(data) {
+        //     container.innerHTML = "";
+        //     let div = document.createElement("div");
+        //     div.innerHTML = `
+        //      <div class="name"> ${data.name}</div>
+        //      <div class="gender"> ${data.gender}</div>
+        //      <div class="height"> ${data.height}</div>
+        //     `;
+        //     container.append(div);
+        // }
+
+        // // 1.6: fetch with header:
+        // const url = "https://jsonplaceholder.typicode.com/todos/1"
+
+        // // Additional data that you want to pass with the request
+        // const extraInfo = {
+        //     method: "GET",
+        //     header: {
+        //         "X-API-Key": "Your_Key"
+        //     }
+        // }
+
+        // async function getData() {
+        //     try {
+        //         const response = await fetch(url, extraInfo);
+        //         const result = await response.json();
+        //         console.log(result);
+        //     } catch (err) {
+        //         console.log(err)
+        //     }
+        // }
+
+        // 1.7: weather api with api key:
+        const apiKey = "17ea5ab8b8564c70b5885948260602";
+        const city = "delhi";
+
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+        async function getWeather() {
             try {
-                let response = await fetch(url);
-                let data = await response.json();
-                showData(data);
+                const response = await fetch(url);
+                const data = await response.json();
+
+                console.log("City:", data.name);
+                // console.log("Temperature:", data.main.temp);
+                console.log("Weather:", data.weather[0].description);
             } catch (err) {
-                console.log(err)
+                console.log("Error:", err);
             }
         }
-        getStarWarsData();
+        getWeather();
 
-        function showData(data) {
-            container.innerHTML = "";
-            let div = document.createElement("div");
-            div.innerHTML = `
-             <div class="name"> ${data.name}</div>
-             <div class="gender"> ${data.gender}</div>
-             <div class="height"> ${data.height}</div>
-            `;
-            container.append(div);
-        }
+
+
 
     </script>
 
