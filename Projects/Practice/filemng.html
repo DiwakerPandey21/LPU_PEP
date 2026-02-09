@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File to ZIP Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, rgb(102,126,234), rgb(242, 239, 245));
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      background: white;
+      width: 500px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      margin: 15px 0;
+      padding: 10px;
+      border: 2px dashed #555;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .info {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      display: none;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #3730a3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>📂 File to ZIP Converter</h2>
+
+    <input type="file" id="fileInput">
+
+    <div class="info" id="fileInfo">No file selected</div>
+
+    <button id="zipBtn">📦 Convert to ZIP</button>
+    <button id="downloadBtn">⬇ Download ZIP</button>
+  </div>
+
+  < -- JSZip Library CDN 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const fileInfo = document.getElementById("fileInfo");
+    const zipBtn = document.getElementById("zipBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    let zipBlob = null;
+    let zipFileName = "";
+
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+
+      if (!file) {
+        fileInfo.innerText = "No file selected";
+        zipBtn.style.display = "none";
+        downloadBtn.style.display = "none";
+        return;
+      }
+
+      fileInfo.innerText = `Selected: ${file.name} (${(file.size/1024).toFixed(2)} KB)`;
+      zipBtn.style.display = "inline-block";
+      downloadBtn.style.display = "none";
+    });
+
+    zipBtn.addEventListener("click", async () => {
+      const file = fileInput.files[0];
+
+      if (!file) {
+        alert("Please select a file first!");
+        return;
+      }
+
+      fileInfo.innerText = "⏳ Converting to ZIP... Please wait";
+
+      try {
+        const zip = new JSZip();
+
+        // add file inside zip
+        zip.file(file.name, file);
+
+        // create zip asynchronously (Promise)
+        zipBlob = await zip.generateAsync({ type: "blob" });
+
+        zipFileName = file.name.split(".")[0] + ".zip";
+
+        fileInfo.innerText = `✅ ZIP Created Successfully: ${zipFileName}`;
+        downloadBtn.style.display = "inline-block";
+
+      } catch (error) {
+        fileInfo.innerText = "❌ Error while creating ZIP file";
+      }
+    });
+
+    // Download ZIP file
+    downloadBtn.addEventListener("click", () => {
+      if (!zipBlob) {
+        alert("ZIP file not created yet!");
+        return;
+      }
+
+      const a = document.createElement("a");
+      const url = URL.createObjectURL(zipBlob);
+
+      a.href = url;
+      a.download = zipFileName;
+      a.click();
+
+      URL.revokeObjectURL(url);
+    });
+  </script>
+
+</body>
+</html> 

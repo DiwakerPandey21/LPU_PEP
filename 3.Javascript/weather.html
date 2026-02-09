@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #dff1ff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .box {
+      background: white;
+      width: 380px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid gray;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: dodgerblue;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: blue;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h2>🌤 Weather App</h2>
+
+    <input type="text" id="city" placeholder="Enter city name">
+    <br>
+    <button onclick="getWeather()">Get Weather</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const apiKey = "Your_API_KEY";
+
+    async function getWeather() {
+      const city = document.getElementById("city").value;
+      const result = document.getElementById("result");
+
+      if (city.trim() === "") {
+        result.innerHTML = "❌ Please enter a city name!";
+        return;
+      }
+
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&timezone=auto&forecast_days=1&city=${city}&appid=${apiKey}`;
+
+      result.innerHTML = "⏳ Loading weather...";
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.cod != 200) {
+          result.innerHTML = `❌ Error: ${data.message}`;
+          return;
+        }
+
+        result.innerHTML = `
+          🌍 <b>City:</b> ${data.name} <br>
+          🌡 <b>Temperature:</b> ${data.main.temp} °C <br>
+          ☁ <b>Weather:</b> ${data.weather[0].description} <br>
+          💧 <b>Humidity:</b> ${data.main.humidity}% <br>
+          💨 <b>Wind Speed:</b> ${data.wind.speed} m/s
+        `;
+      } catch (error) {
+        result.innerHTML = "⚠ Error fetching weather!";
+        console.log(error);
+      }
+    }
+  </script>
+
+</body>
+</html>

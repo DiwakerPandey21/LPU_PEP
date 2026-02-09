@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dog & Cat Images</title>
+</head>
+<body>
+
+  <h2>Random Dog 🐶 & Cat 🐱 Generator</h2>
+
+  <button onclick="getDog()">Get Dog</button>
+  <button onclick="getCat()">Get Cat</button>
+
+  <br><br>
+
+  <img id="img" width="350" />
+
+  <script>
+    const apiKey = "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
+
+    async function getDog() {
+      try {
+        let res = await fetch("https://api.thedogapi.com/v1/images/search", {
+          headers: { "x-api-key": apiKey }
+        });
+
+        let data = await res.json();
+        document.getElementById("img").src = data[0].url;
+      } catch (err) {
+        console.log("Dog Error:", err);
+      }
+    }
+
+    async function getCat() {
+      try {
+        let res = await fetch("https://api.thecatapi.com/v1/images/search", {
+          headers: { "x-api-key": apiKey }
+        });
+
+        let data = await res.json();
+        document.getElementById("img").src = data[0].url;
+      } catch (err) {
+        console.log("Cat Error:", err);
+      }
+    }
+  </script>
+
+</body>
+</html>
