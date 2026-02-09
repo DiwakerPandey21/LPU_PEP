@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle Board</title>
+  <link rel="stylesheet" href="puzzle.css">
+</head>
+<body>
+
+  <h1>Complete the Image</h1>
+
+  <div class="container">
+
+    <!-- Reference Image -->
+    <div class="reference">
+      <h2>Reference</h2>
+      <img src="Puzzle2.jpg" class="reference-img" alt="Reference">
+    </div>
+
+    <!-- Puzzle Board -->
+    <div class="board">
+      <h2>Puzzle Board</h2>
+
+      <div class="puzzle-grid">
+        <div class="dropzone" data-correct="piece1" data-current=""></div>
+        <div class="dropzone" data-correct="piece2" data-current=""></div>
+        <div class="dropzone" data-correct="piece3" data-current=""></div>
+        <div class="dropzone" data-correct="piece4" data-current=""></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pieces -->
+  <h2 class="pieces-title">Pieces</h2>
+  <div class="pieces">
+
+    <img src="image_part_001.jpg" id="piece1" draggable="true" class="piece">
+    <img src="image_part_002.jpg" id="piece2" draggable="true" class="piece">
+    <img src="image_part_003.jpg" id="piece3" draggable="true" class="piece">
+    <img src="image_part_004.jpg" id="piece4" draggable="true" class="piece">
+
+  </div>
+
+  <!-- Result Message -->
+  <h2 id="resultMessage">🎉 Puzzle Completed Successfully!</h2>
+
+  <script src="puzzle.js"></script>
+</body>
+</html>
