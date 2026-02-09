@@ -1,0 +1,52 @@
+* git --version: to see git version
+* git config --list: to see all git configurations
+
+Configuration commands for first time only:
+* git config --global user.name "Your_name"
+* git config --global user.email "Your_email"
+
+* Initialise empty git repo
+git init
+
+* gives current status of git files
+git status
+ 
+* Add Files:
+git add . (current folder only)
+git add -A(whole repository)
+
+* to see all logs of git:
+git log
+
+* Journey from Local Project to github push code:
+1) We create a repo at our github
+2) we copy url
+
+commends:
+1) git remote add origin <repo_url>
+
+Push code to Github:
+1) git branch -M main
+2) git push -u origin main
+
+* github to local copy:
+git clone <repo_url>
+
+
+* create branch
+git branch <branch_name>
+
+* check all branches:
+git branch
+
+* create as well as switch:
+git branch -b <branch_name>
+
+* merge branch
+git merge <branch_name>
+
+* delete file:
+git rm <file_name>
+
+* u want to revert to ur previous status/ commit:
+git reset --hard Head~1
