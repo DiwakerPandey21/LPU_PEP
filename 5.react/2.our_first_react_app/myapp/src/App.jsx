@@ -1,19 +1,31 @@
+import TestMyLuck from "./components/jsx/TestMyLuck";
 
-// 2. learning about jsx:
-import LearningJSX from './components/jsx/LearningJSX'
-
-
-
+// 3. my lucky number:
 function App(){
   return(
     <>
-    <LearningJSX/>
+    <TestMyLuck/>
     </>
     
   )
 }
 
-export default App;
+export default App
+
+
+// // 2. learning about jsx:
+// import LearningJSX from './components/jsx/LearningJSX'
+
+// function App(){
+//   return(
+//     <>
+//     <LearningJSX/>
+//     </>
+    
+//   )
+// }
+
+// export default App;
 
 
 
