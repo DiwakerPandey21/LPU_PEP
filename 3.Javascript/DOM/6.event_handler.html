@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+
+<body style="background-color: aquamarine;">
+
+    <!-- 1.1.: inline events -->
+
+    <!-- <button onclick="console.log('button is pressed')">Click Me!</button> -->
+
+    <h1>This is a Event Page:</h1>
+    <button>Click Me</button>
+    <br>
+    <br>
+    <button>Click Me</button>
+    <br>
+    <br>
+    <button>Click Me</button>
+    <br>
+    <br>
+    <button>Click Me</button>
+
+    <script>
+
+        // // 1.
+        // var btn = document.querySelector('button');
+        // // console.dir(btn)
+        // btn.onclick = function () {
+        //     console.log("button pressed")
+        // }
+
+        // //2.
+        // var btns = document.querySelectorAll('button');
+        // // console.log(btns)
+        // for (btn of btns) {
+        //     // btn.onclick = myfunc;
+        //     btn.onmouseenter =
+        //         function cursor() {
+        //             console.log("Mouse is over to the buttons. Please get away from me")
+        //         }
+        // }
+        // // console.log(btns)
+        // function myfunc() {
+        //     console.log("Button Pressed")
+        // }
+
+        // // 3.
+        // var btns = document.querySelectorAll('button');
+        // for (btn of btns) {
+        //     btn.onclick = myfunc;
+        //     btn.onclick = hello;
+        // }
+
+        // function myfunc() {
+        //     console.log("This is my function")
+        // }
+
+        // function hello() {
+        //     console.log("Hello this is a function");
+        // }
+
+        // 4. Event listeners:
+        var btns = document.querySelectorAll("button");
+        for (btn of btns) {
+            btn.addEventListener("click", myfunc);
+            btn.addEventListener("click", hello);
+        }
+        function myfunc() {
+            console.log("This is my function")
+        }
+
+        function hello() {
+            console.log("Hello this is a function");
+        }
+
+        // 5.event listener on elements:
+        var head = document.querySelector('h1');
+        head.addEventListener('mouseenter', function myfunc() {
+            console.log("Mouse is over to h1")
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+* cd <folder_name>: to change directory
+* mkdir <folder_name>: to create a new directory
+* cd .. : to go to previous directory
+* type nul > <file_name.extension>: to create a file
+* echo <content> <file_name.extension>: write into the file
+* dir: show files and folder
+* dir /a: to show all files and folders(even hidden ones)
+* cls: clear terminal
+* del <file_name>: delete file
+* rmdir <folder_name>: to delete folder
+* ren <old_file_name> <new_file_name>
+* copy <copy_file_name> <file_name>:copy file
+* move <file_name> <folder_name>: to move file to current directory folder
+* cd: to see current path 
+* type <file_name>: to see file content
+* start .: to show file in explore
+* tree: to seefolder view(tree structure)
+* rmdir /s /q <folder_name>: force deletion for folder
+* systeminfo : to see system information
+* tasklist: to see running apps in your system
+* nodepad: open nodepad

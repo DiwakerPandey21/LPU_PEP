@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Puzzle Board</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h2 class="title">Complete the Image</h2>
+    <div class="game-area">
+        <!-- REFERENCE -->
+        <div class="card reference">
+            <h3>Reference</h3>
+            <img src="images/complete_image.png" alt="Full Puzzle" />
+        </div>
+        <!-- BOARD -->
+        <div class="card board-card">
+            <h3>Board</h3>
+            <div class="board">
+                <div class="zone" data-pos="1"></div>
+                <div class="zone" data-pos="2"></div>
+                <div class="zone" data-pos="3"></div>
+                <div class="zone" data-pos="4"></div>
+            </div>
+        </div>
+    </div>
+    <!-- PIECES -->
+    <div class="card tray-card">
+        <h3>Pieces</h3>
+        <div class="tray">
+            <div class="piece" draggable="true" data-pos="3">
+                <img src="images/piece3.png" />
+            </div>
+            <div class="piece" draggable="true" data-pos="1">
+                <img src="images/piece1.png" />
+            </div>
+            <div class="piece" draggable="true" data-pos="4">
+                <img src="images/piece4.png" />
+            </div>
+            <div class="piece" draggable="true" data-pos="2">
+                <img src="images/piece2.png" />
+            </div>
+        </div>
+    </div>
+    <p id="status"></p>
+    <script src="script.js"></script>
+</body>
+
+</html>
