@@ -1,16 +1,47 @@
-import TestMyLuck from "./components/jsx/TestMyLuck";
+import LearnProps from "./components/LearnProps"
 
-// 3. my lucky number:
+// 5.props:
 function App(){
   return(
     <>
-    <TestMyLuck/>
-    </>
+    <LearnProps name="ashish" age="24" crush="piggy"/>
+    <br />
+    <LearnProps name="rakshit" age="27" crush="moto"/>
+    <br />"
+    <LearnProps name="yash" age="25" crush="sukha"/>
+    </> 
     
   )
 }
-
 export default App
+
+
+// // 4. Creating todoList:
+// import TodoList from './components/jsx/todoList/TodoList'
+
+// function App(){
+//   return(
+//     <TodoList/>
+    
+//   )
+// }
+// export default App
+
+
+// // 3. my lucky number:
+// import TestMyLuck from "./components/jsx/TestMyLuck";
+
+
+// function App(){
+//   return(
+//     <>
+//     <TestMyLuck/>
+//     </>
+    
+//   )
+// }
+
+// export default App
 
 
 // // 2. learning about jsx:
