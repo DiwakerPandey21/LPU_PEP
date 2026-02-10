@@ -1,5 +1,8 @@
+
 // 2. learning about jsx:
-import LearningJSX from "./LearningJSX"
+import LearningJSX from './components/jsx/LearningJSX'
+
+
 
 function App(){
   return(
