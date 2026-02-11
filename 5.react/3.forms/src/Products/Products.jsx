@@ -1,27 +1,21 @@
 import { useState } from 'react';
-import './Products.css'
+import './Products.css';
 
-const Products = (props) => {
+const Products = ({ name, price, imgUrl }) => {
 
-  // let price = props.price
-  const [price,setPrice] = useState(props.price);
-  
-  const priceHandler = () =>{
-    // console.log("I was clicked");
-    // price =100
-    // console.log(price)
+  const [productPrice, setProductPrice] = useState(price);
 
-    setPrice(100);
-  }
+  const priceHandler = () => {
+    setProductPrice(100);
+  };
 
   return (
-    // figure tag display our content along with our image
     <figure className='product' onClick={priceHandler}>
-        <img src={props.imgUrl} alt={props.name} />
-        <h2>Name: {props.name}</h2>
-        <h3>Price: Rs {price}</h3>
+      <img src={imgUrl} alt={name} />
+      <h2>Name: {name}</h2>
+      <h3>Price: Rs {productPrice}</h3>
     </figure>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

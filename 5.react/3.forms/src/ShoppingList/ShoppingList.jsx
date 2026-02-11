@@ -1,5 +1,6 @@
 import React from 'react'
 import Products from '../Products/Products'
+import Form from '../form/Form'
 
 const ShoppingList = () => {
 
@@ -39,9 +40,12 @@ const ShoppingList = () => {
 
 
   return (
+    
     <section className='products-container'>
-        {products.map((product)=>{
-            return <Products name={product.name} price={product.price} imgUrl={product.imgUrl}/>
+        <Form/>
+        
+        {products.map((product,idx)=>{
+            return <Products key={idx} name={product.name} price={product.price} imgUrl={product.imgUrl}/>
         })}
     </section>
   )
