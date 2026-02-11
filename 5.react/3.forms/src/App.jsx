@@ -1,9 +1,15 @@
 import React from 'react'
-import ShoppingList from './ShoppingList/ShoppingList'
+// import ShoppingList from './ShoppingList/ShoppingList'
+import { LearnUseState } from './hooks/LearnUseState'
 
 const App = () => {
   return (
-    <ShoppingList/>
+
+    // 2. counter:
+    <LearnUseState/>
+
+    // // 1. shopping card:
+    // <ShoppingList/>
   )
 }
 
