@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Products from '../Products/Products'
 import Form from '../form/Form'
 
 const ShoppingList = () => {
 
-    const products = [
+    const dummy_products = [
         {
             name: 'Iphone 15',
             price: '86000',
@@ -37,12 +37,17 @@ const ShoppingList = () => {
         },
     ]
 
+    const [products,setProducts]=useState(dummy_products)
+
+    const addProduct = (product)=>{
+        setProducts([...products,product])
+    }
 
 
   return (
     
     <section className='products-container'>
-        <Form/>
+        <Form addProduct={addProduct}/>
         
         {products.map((product,idx)=>{
             return <Products key={idx} name={product.name} price={product.price} imgUrl={product.imgUrl}/>
