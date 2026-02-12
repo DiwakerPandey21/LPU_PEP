@@ -60,3 +60,14 @@ IMP POINT:
 -> State changes with Ref object don't trigger a re-render of the components
 -> Changes dont re-render
 
+# useReducer Hook: (decide how state management hook)
+It is a state management hook which is useful when you want to have a complex state logic that involves multiple sub-values or next state is dependent on the previous state.
+
+It take 2 things:
+* reducer function (logic)
+* dispatch(UI actions)
+
+IMP POINT:
+-> It is an ulternative  to useState and is often preferable when dealing with more intricate state management
+
+
