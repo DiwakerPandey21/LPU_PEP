@@ -53,3 +53,10 @@ useEffect(()=>{
 
 * we are getting 2 output in the console logs bcz of lifecycle methods
 
+# UseRef hook: (stores value without re-render or access DOM)
+It is a hook that provides a mutable object called a Ref object. This object has a current property  that can be used to hold a mutable references to value.
+
+IMP POINT:
+-> State changes with Ref object don't trigger a re-render of the components
+-> Changes dont re-render
+
