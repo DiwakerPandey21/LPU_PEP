@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision on closure, event handling, arrays methods</title>
+</head>
+
+<body>
+
+    <p>count: <span id="count">0</span></p>
+    <button id="btn">Click Me</button>
+
+    <script>
+
+        // Q6. button pressed increase the count:
+        let count = 0;
+        document.querySelector('#btn').addEventListener('click', () => {
+            count++;
+            document.getElementById("count").innerText = count;
+        })
+
+
+        // // Question 3: function that runs ones only
+        // function once(fn) {
+        // let called = false;
+
+        // return function () {
+        // if (!called) {
+        // called = true;
+        // return fn();
+        // }
+        // };
+        // }
+
+        // const runOnce = once(() => {
+        // console.log("Executed");
+        // });
+        // runOnce();
+        // runOnce();
+
+
+    </script>
+</body>
+
+</html>

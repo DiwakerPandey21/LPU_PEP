@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form events</title>
+</head>
+
+<body style="background-color: grey;">
+
+    <form action="/newpage">
+
+        <p></p>
+
+        <input type="text" placeholder="Enter your name">
+        <button>Submit Here</button>
+    </form>
+
+
+    <script>
+        // // 1. restricting form default nature:
+        // var form = document.querySelector("form");
+        // form.addEventListener("submit", function (e) {
+        //     e.preventDefault();
+        //     console.log("form is submited")
+        // });
+
+        // // 2.accessing user data of input field:
+        // var form = document.querySelector("form");
+        // form.addEventListener("submit", function (event) {
+        //     event.preventDefault();
+        //     var input = document.querySelector("input");
+        //     console.dir(input);
+        //     console.log(input.value)
+        //     console.log("form submittion successful")
+        // })
+
+        // 3.displaying the console retrived data to UI: pararagrph:
+        var form = document.querySelector("form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            var input = document.querySelector("input");
+            var p = document.querySelector('p');
+            p.innerText = input.value;
+            console.log("form submittion successful");
+        })
+    </script>
+
+
+</body>
+
+</html>

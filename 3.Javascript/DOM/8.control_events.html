@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control events</title>
+</head>
+
+<body>
+    <h1>Control events</h1>
+    <input type="text">
+    <br><br>
+    <button>Click Me</button>
+
+    <script>
+        let input = document.queryselector("input");
+        input.addEventListener('keydown', function (e) {
+            console.log("Key is:" + e.code)
+            console.log("Value is:" + e.key);
+        })
+
+        // 1.keyup:
+
+    </script>
+
+</body>
+
+</html>

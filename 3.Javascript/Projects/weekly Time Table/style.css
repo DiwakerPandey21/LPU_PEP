@@ -1,0 +1,47 @@
+body{
+    background-color:#222222 ;
+    font-family: segoue UI, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+
+h1{
+    color: orange;
+}
+
+.weeks{
+    display: flex;
+    gap: 20px;
+    background: #444444;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.day{
+    background-color: #666666;
+    padding: 20px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.day:hover{
+    background: #00ffcc;
+    color: black;
+    box-shadow: 0 0 10px #00ffcc;
+    transform:  scale(1.1);
+}
+
+.info{
+    margin-top: 30px;
+    background: #333333;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
