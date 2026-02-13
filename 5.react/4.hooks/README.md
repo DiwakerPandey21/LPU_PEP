@@ -71,3 +71,4 @@ IMP POINT:
 -> It is an ulternative  to useState and is often preferable when dealing with more intricate state management
 
 
+# useContext:
