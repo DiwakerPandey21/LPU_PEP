@@ -8,7 +8,8 @@ import React from 'react'
 // import './components/useContext/style.css'
 // import LearnLayoutEffect from './components/useLayoutEffect/LearnLayoutEffect'
 // import Parent1 from './components/useCallback/Parent1'
-import Memo from './components/useMemo/Memo'
+// import Memo from './components/useMemo/Memo'
+import Testing from './components/custome hook/Testing'
 
 // const App = () => {
 //   return (
@@ -59,11 +60,19 @@ import Memo from './components/useMemo/Memo'
 //   )
 // }
 
+// // 3. useMemo:
+// const App = () => {
+
+//   return (
+//     <Memo/>
+//   )
+// }
+
 // 3. useMemo:
 const App = () => {
 
   return (
-    <Memo/>
+    <Testing/>
   )
 }
 
