@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import Child from './Child.jsx'
 
 
@@ -7,9 +7,10 @@ const Parent1 = () => {
     const [count1,setCount1]= useState(0);
     const [count2,setCount2]= useState(0);
 
-    const handleClick =()=>{
+    // using useCallback
+    const handleClick = useCallback(()=>{
         setCount1(count1 + 1);
-    }
+    },[count1])     
 
 
   return (
