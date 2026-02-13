@@ -6,6 +6,7 @@ import Dean from './components/useContext/Props Drilling/Dean'
 import Univerity from './components/useContext/Univerity'
 import Student from './components/useContext/Student'
 import './components/useContext/style.css'
+import LearnLayoutEffect from './components/useLayoutEffect/LearnLayoutEffect'
 
 // const App = () => {
 //   return (
@@ -30,13 +31,21 @@ import './components/useContext/style.css'
 //   )
 // }
 
-// 1.2:useContext: working as a wrapper for data and university component
+// // 1.2:useContext: working as a wrapper for data and university component
+// const App = () => {
+
+//   return (
+//     <Univerity>
+//       <Student/>
+//     </Univerity>
+//   )
+// }
+
+// 2. useLayoutEffect:
 const App = () => {
 
   return (
-    <Univerity>
-      <Student/>
-    </Univerity>
+    <LearnLayoutEffect/>
   )
 }
 
