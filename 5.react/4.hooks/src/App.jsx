@@ -7,6 +7,7 @@ import Univerity from './components/useContext/Univerity'
 import Student from './components/useContext/Student'
 import './components/useContext/style.css'
 import LearnLayoutEffect from './components/useLayoutEffect/LearnLayoutEffect'
+import Parent1 from './components/useCallback/Parent1'
 
 // const App = () => {
 //   return (
@@ -41,11 +42,19 @@ import LearnLayoutEffect from './components/useLayoutEffect/LearnLayoutEffect'
 //   )
 // }
 
-// 2. useLayoutEffect:
+// // 2. useLayoutEffect:
+// const App = () => {
+
+//   return (
+//     <LearnLayoutEffect/>
+//   )
+// }
+
+// 3. usecallback:
 const App = () => {
 
   return (
-    <LearnLayoutEffect/>
+    <Parent1/>
   )
 }
 
