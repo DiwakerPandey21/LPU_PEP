@@ -2,12 +2,13 @@ import React from 'react'
 // import LearnEffect from './components/LearnEffect'
 // import LearningRef from './components/LearningRef'
 // import LearningReduce from './components/LearningReduce'
-import Dean from './components/useContext/Props Drilling/Dean'
-import Univerity from './components/useContext/Univerity'
-import Student from './components/useContext/Student'
-import './components/useContext/style.css'
-import LearnLayoutEffect from './components/useLayoutEffect/LearnLayoutEffect'
-import Parent1 from './components/useCallback/Parent1'
+// import Dean from './components/useContext/Props Drilling/Dean'
+// import Univerity from './components/useContext/Univerity'
+// import Student from './components/useContext/Student'
+// import './components/useContext/style.css'
+// import LearnLayoutEffect from './components/useLayoutEffect/LearnLayoutEffect'
+// import Parent1 from './components/useCallback/Parent1'
+import Memo from './components/useMemo/Memo'
 
 // const App = () => {
 //   return (
@@ -50,11 +51,19 @@ import Parent1 from './components/useCallback/Parent1'
 //   )
 // }
 
-// 3. usecallback:
+// // 3. usecallback:
+// const App = () => {
+
+//   return (
+//     <Parent1/>
+//   )
+// }
+
+// 3. useMemo:
 const App = () => {
 
   return (
-    <Parent1/>
+    <Memo/>
   )
 }
 
