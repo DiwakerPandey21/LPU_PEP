@@ -23,7 +23,7 @@
 // app.js
 // console.log(`My name is ${actor1.js(name)} and my age is ${actor2.js(age)} and this is about me ${actor3.js(description)}`)
 
-const req = require("./students/practice2");
+const req = require("./require/students/practice2");
 // const actor1 = require("./students/practice2/actor1");'
 // const newname = req[1].name = "Shubham";
 const newage = req;
