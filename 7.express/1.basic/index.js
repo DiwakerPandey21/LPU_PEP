@@ -1,11 +1,12 @@
-import express from "express";
+import express from "express"; // npm: npm init: npm i express
 
 const app = express(); // object it return: lot of methods and properties it has.
 // console.log(app);
 
 // listen(fn): incoming requests.
 // 2 arguments: PORT, callback
-app.listen(3000, () => {
+const PORT = 3000;
+app.listen(PORT, () => {
   console.log("App is listening at port 3000");
 });
 
