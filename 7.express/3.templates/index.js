@@ -18,3 +18,9 @@ app.get("/", (req, res) => {
   //   res.send("home.ejs");  //"string,html content, text data"
   res.render("home.ejs");
 });
+
+app.get("/dice", (req, res) => {
+  let diceVal = Math.floor(Math.random() * 6 + 1);
+
+  res.render("dice.ejs", { diceVal });
+});
